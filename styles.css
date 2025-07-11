@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f6;
+}
+
+.calculator {
+    width: 400px;
+    background-color: #f2f2f6;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.display {
+    padding: 20px 5px 35px 5px;
+    color: #1c1c1e;
+    text-align: right;
+    position: relative;
+}
+
+.mode {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #8e8e93;
+}
+
+.date {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #8e8e93;
+}
+
+.result {
+    font-size: 60px;
+    font-weight: 300;
+    margin-top: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.button {
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 400;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.memory, .base {
+    background-color: #e3e3e8;
+    color: #1c1c1e;
+    font-size: 22px;
+}
+
+.operation {
+    background-color: #ff9f0a;
+    color: white;
+}
+
+.operation.active {
+    background-color: white;
+    color: #ff9f0a;
+}
+
+.number {
+    background-color: #d1d1d6;
+    color: #1c1c1e;
+}
+
+.equals {
+    background-color: #089849;
+    color: white;
+}
+
+.clear, .backspace, .plusminus, .parenthesis {
+    background-color: #e3e3e8;
+    color: #1c1c1e;
+}
+
+.zero {
+    border-radius: 50px;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+/* Function row */
+.function-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.function {
+    height: 40px;
+    border-radius: 20px;
+    background-color: #e3e3e8;
+    color: #1c1c1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.function:active {
+    background-color: #d1d1d6;
+}
+
+/* Dark mode switch */
+.theme-switch {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 24px;
+    background-color: #e3e3e8;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.theme-switch::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+.calculator.dark-mode {
+    background-color: #1c1c1e;
+}
+
+.calculator.dark-mode .display {
+    color: white;
+}
+
+.calculator.dark-mode .mode,
+.calculator.dark-mode .date {
+    color: #8e8e93;
+}
+
+.calculator.dark-mode .memory,
+.calculator.dark-mode .base,
+.calculator.dark-mode .clear,
+.calculator.dark-mode .backspace,
+.calculator.dark-mode .plusminus,
+.calculator.dark-mode .parenthesis,
+.calculator.dark-mode .function {
+    background-color: #505054;
+    color: white;
+}
+
+.calculator.dark-mode .number {
+    background-color: #3a3a3c;
+    color: white;
+}
+
+.calculator.dark-mode .theme-switch {
+    background-color: #505054;
+}
+
+.calculator.dark-mode .theme-switch::after {
+    transform: translateX(26px);
+}
